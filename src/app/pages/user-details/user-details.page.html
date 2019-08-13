@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalles Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  
+    <ion-list lines="full">
+      
+      <ng-container *ngIf="user">
+      
+        <ion-input required type="text" placeholder="nombre" [(ngModel)]="user.nombre"></ion-input>
+        <ion-input required type="text" placeholder="apellido" [(ngModel)]="user.apellido"></ion-input>
+        <ion-input required type="text" placeholder="correo" [(ngModel)]="user.correo"></ion-input>
+        <ion-input required type="text" placeholder="telefono" [(ngModel)]="user.telefono"></ion-input>
+      </ng-container>
+        
+    </ion-list>
+    <ion-button expand="full" (click)="saveUser()">Guardar Usuario</ion-button>
+    
+</ion-content>
