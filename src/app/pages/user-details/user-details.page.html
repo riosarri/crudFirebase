@@ -5,19 +5,22 @@
 </ion-header>
 
 <ion-content>
-
-  
-    <ion-list lines="full">
-      
-      <ng-container *ngIf="user">
-      
-        <ion-input required type="text" placeholder="nombre" [(ngModel)]="user.nombre"></ion-input>
-        <ion-input required type="text" placeholder="apellido" [(ngModel)]="user.apellido"></ion-input>
-        <ion-input required type="text" placeholder="correo" [(ngModel)]="user.correo"></ion-input>
-        <ion-input required type="text" placeholder="telefono" [(ngModel)]="user.telefono"></ion-input>
-      </ng-container>
-        
-    </ion-list>
-    <ion-button expand="full" (click)="saveUser()">Guardar Usuario</ion-button>
-    
+  <ion-list lines="full">
+    <ng-container *ngIf="user">
+      <ion-input required type="text" placeholder="nombre" [(ngModel)]="user.nombre"></ion-input>
+      <ion-input required type="text" placeholder="apellido" [(ngModel)]="user.apellido"></ion-input>
+      <ion-input required type="text" placeholder="correo" [(ngModel)]="user.correo"></ion-input>
+      <ion-input required type="text" placeholder="telefono" [(ngModel)]="user.telefono"></ion-input>
+      <ion-input *ngIf="calendar">{{onSelect()}}</ion-input>
+    </ng-container>
+  </ion-list>
+  <ion-button expand="full" (click)="saveUser()">Guardar Usuario</ion-button>
 </ion-content>
+
+    <div class="ui-g-12 ui-md-4">
+        <h3>Icon</h3>
+        <p-calendar [(ngModel)]="calendar" onselect="onSelect()" [locale]="es" dateFormat="dd/mm/yy" [showIcon]="true"></p-calendar>
+    </div>
+  
+
+

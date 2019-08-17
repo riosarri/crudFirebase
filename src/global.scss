@@ -26,5 +26,12 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 .custom-loader-class{
-    background: url('assets/barber.gif');
+    --background: url('assets/barber.gif') 100px/160px 140px;
+    --min-width: 200px;
+    --height: 100px;
+}
+.imagen {
+    height: 119px;
+    border-radius: 56px;
+    margin-top: 4%;
 }

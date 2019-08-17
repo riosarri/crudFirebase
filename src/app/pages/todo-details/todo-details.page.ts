@@ -24,19 +24,22 @@ export class TodoDetailsPage implements OnInit {
 
   ngOnInit() {
     this.todoId = this.route.snapshot.params['id'];
-    if(this.todoId) {
+    if (this.todoId) {
       this.loadTodo();
     }
   }
 
   async loadTodo() {
+    // Loader customizado con icono en gif
     const loading = await this.loadingController.create({
-      mode: "ios",
-      spinner: "bubbles"
+      spinner: null,
+      message: '<img class="imagen" alt="W3Schools" src="../../../assets/igorLogo.png" height="119px">',
+      //message : '<strong>Cargando...</strong>',
+      cssClass: 'custom-loader-class'
     });
     await loading.present();
-    this.todoService.getTodo(this.todoId).subscribe(res =>{
-      loading.dismiss();
+    this.todoService.getTodo(this.todoId).subscribe(res => {
+      
       this.todo = res;
     });
   }

@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { UserDetailsPage } from './user-details.page';
+import { CalendarModule } from 'primeng/calendar';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    CalendarModule,
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
